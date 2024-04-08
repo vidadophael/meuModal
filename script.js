@@ -33,5 +33,6 @@ document.addEventListener("keydown", function (eventKey) {
   if (eventKey.key === "Escape" && !modal.classList.contains(".hidden")) {
       //*called function here!
       closeModal();
+
   }
 });
