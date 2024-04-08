@@ -11,13 +11,13 @@ const openModal = function () {
   console.log("botão clicado");
   modal.classList.remove("hidden");
   overlay.classList.remove("hidden");
-}
+};
 
 //function for close modal
 const closeModal = function () {
   modal.classList.add("hidden");
   overlay.classList.add("hidden");
-}
+};
 
 for (let i = 0; i < btnsOpenModal.length; i++)
   //click in btn showing
@@ -27,3 +27,13 @@ for (let i = 0; i < btnsOpenModal.length; i++)
 btnCloseModal.addEventListener("click", closeModal);
 //click outside
 overlay.addEventListener("click", closeModal);
+
+//close modal with key 'esc'
+document.addEventListener("keydown", function (eventKey) {
+  //console.log( eventKey.key, typeof eventKey.key);+
+  if (eventKey.key === "Escape") {
+    if (!modal.classList.contains(".hidden")) {
+      closeModal();
+    }
+  }
+});
