@@ -8,7 +8,6 @@ const btnsOpenModal = document.querySelectorAll(".show-modal");
 
 //function open modal's
 const openModal = function () {
-  console.log("botão clicado");
   modal.classList.remove("hidden");
   overlay.classList.remove("hidden");
 };
@@ -31,9 +30,8 @@ overlay.addEventListener("click", closeModal);
 //close modal with key 'esc'
 document.addEventListener("keydown", function (eventKey) {
   //console.log( eventKey.key, typeof eventKey.key);+
-  if (eventKey.key === "Escape") {
-    if (!modal.classList.contains(".hidden")) {
+  if (eventKey.key === "Escape" && !modal.classList.contains(".hidden")) {
+      //*called function here!
       closeModal();
-    }
   }
 });
